@@ -6,7 +6,7 @@ public class A4_ArrayBi_Asimetrica_Colegio {
 	public static void main (String [] args) {
 		
 		
-		/*
+		/* 
 		 * ----------CREANDO UN COLEGIO----------
 		 * 
 		 * [1]. PARTE OBLIGATORIA DEL EJERCIIO
