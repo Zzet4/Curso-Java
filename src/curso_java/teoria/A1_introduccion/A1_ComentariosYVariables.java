@@ -4,14 +4,36 @@ public class A1_ComentariosYVariables {
 	public static void main (String [] arg) {
 	
 		
-		//Tipos de comentarios
+		//TIPOS DE COMENTARIOS
 		
 			
 			/*
-			  Comentario de bloque
-			*/
-	//OJO IMPORTANTE: Si seleccionas varias lineas y pulsas Ctrl + Shift + c puedes comentarlas todas a la vez.
+			 *
+			 * Comentario de bloque, abre con ( /* y cierra con la inversa
+			 * 
+			 *  */
+		
+		
 	
+			//Comentario de linea, utilizado con la doble barra //
+			//OJO IMPORTANTE: Si seleccionas varias lineas y pulsas Ctrl + Shift + c puedes comentarlas todas a la vez.
+			
+		
+		
+			//Comentarios sobre métodos, es como el comentario de bloque pero se abre con doble asterisco
+			//Se escribe justo encima del metodo para que luego pueda mostrarse la descripción cuando invoques al método
+			/**
+			 * 
+			 * Comentas un poco que es lo que hace el método para luego poder consultarlo en sus respectivas llamadas
+			 * @author Pablo
+			 * @since versión 1.0
+			 * @param Al método hay que pasarle x parámetros
+			 * @return El método devuelve x
+			 * 
+			 */
+		
+		
+		
 		
 		//Declaración e inicialización de variables.
 			int num; //Declaración de variable
