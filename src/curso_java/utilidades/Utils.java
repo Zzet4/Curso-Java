@@ -30,13 +30,13 @@ public class Utils {
 			
 		//C1) Prueba pintaMenu con texto
 			String cuerpoMenu = "\nopcion1 \nopcion2 \nopcion3 \nopcion4 \nopcion5";
-			pintaMenu(cuerpoMenu);
+			pintaMenu(cuerpoMenu, "Seleccione una opción");
 //			String resultadoMenu = pintaMenu(cuerpoMenu);
 //			System.out.println(resultadoMenu);
 			
 		//C2) Prueba pintaMenu con array.
 			String [] cuerpoMenuArray = {"opcionA1", "opcionA2", "opcionA3", "opcionA4", "opcionA5"};
-			pintaMenu(cuerpoMenuArray);
+			pintaMenu(cuerpoMenuArray, "Seleccione una de las opciones");
 			
 	}
 	
@@ -87,27 +87,74 @@ public class Utils {
 	
 	
 	//C1)
-	public static int pintaMenu (String cuerpoMenu) {
-		System.out.println(cuerpoMenu);
-		int out = scanInt("seleccione una de las opciones \n");
-		System.out.println("la opcion elegida es la número: " + out);
+	public static int pintaMenu (String cuerpoMenu, String pregunta) {
+		System.out.println(cuerpoMenu); 
+		int out = scanInt(pregunta);
+		
 		return out;
 	}
 	
 	
 	
 	//C2)
-	public static int pintaMenu (String [] cuerpoMenuArray) {
+	public static int pintaMenu (String [] cuerpoMenuArray, String pregunta) {
 		int opcion=0;
 		
-		for ( int i=0  ; i<cuerpoMenuArray.length  ; i++  ) {
-			System.out.println(cuerpoMenuArray[i]);
+//		for ( int i=0  ; i<cuerpoMenuArray.length  ; i++  ) {
+//			System.out.println(cuerpoMenuArray[i]);
+//		}
+		
+		for (String dato : cuerpoMenuArray ) {
+			System.out.println(dato);
 		}
-		int out = scanInt("seleccione una de las opciones \n");
-		System.out.println("la opcion elegida es la número: " + out);
+		int out = scanInt(pregunta);
+	
 		return out;
 		
 	}
+	
+	
+	//METODO PARA EL CUERPO DE UN SWITCH
+	public static void cuerpoSwitch (int opcionMP) {
+		switch (opcionMP) {
+		case 1:// xxxxxxxxx
+	
+			break;
+		case 2:// xxxxxxxxx
+			
+			break;
+		case 3:// xxxxxxxxx
+			
+			break;
+		case 4:// xxxxxxxxx
+			
+			break;
+		case 5:// xxxxxxxxx
+		
+			break;
+		case 6:// xxxxxxxxx
+			
+			break;
+		case 7:// xxxxxxxxx
+			
+			break;
+		case 8:// xxxxxxxxx
+			
+			break;
+		case 9:// xxxxxxxxx
+			
+			break;
+		case 10:// xxxxxxxxx
+			
+			break;
+		}
+		
+		
+	}
+	
+	
+	
+	
 	
 }
 
