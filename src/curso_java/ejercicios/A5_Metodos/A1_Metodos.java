@@ -35,12 +35,6 @@ public class A1_Metodos {
 		
 		}
 	
-	
-	
-	
-
-	
-	
 
 		/*
 		 * 

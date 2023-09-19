@@ -24,6 +24,10 @@ public class A3_ArraysBi_Asimetrica {
 				
 				
 				
+		//otra forma de crear un array bidimensional y rellenarlo conociendo los datos es la siguiente
+				
+			int [][] colegio = {{3,5,8},{2,4},{1}};
+				
 			}
 		}
 		
