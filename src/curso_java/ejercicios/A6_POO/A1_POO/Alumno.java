@@ -20,12 +20,12 @@ public class Alumno {
 	//para poder acceder al método pero no modificarlo hay que crear un metodo aparte que sea set y otro para poder obtenerlo que sea get
 	//a este proceso le llamamos GETTER Y SETTER
 	
-	//Este metodo es el que habilita poder recoger el dato del dni
+	//Este metodo es el que habilita poder modificar el dato del dni
 	public void setDni (String dni) {
 	this.dni = dni;
 }
 	
-	//Este metodo es el que hay que usar para recogerlo.
+	//Este metodo es el que hay que usar para recogerlo, visualizar y operar con el dato.
 	public String getDni () {
 		return dni;
 	}

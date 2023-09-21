@@ -1,0 +1,58 @@
+
+Vamos a crear un escaparate
+
+CREAMOS
+
+	Clase Boton
+		+ id
+		+ color
+		+ forma
+		+ tamanio
+		
+		
+		
+		
+	Clase Pantalon	
+	
+		+ id
+		+ color
+		+ talla
+		+ precio
+		+ Boton 
+		
+		
+	Clase Camisa	
+		+ id
+		+ color
+		+ talla
+		+ precio
+		
+		
+		
+	Clase Vestido	
+	
+		+ id
+		+ color
+		+ talla
+		+ precio
+		
+		
+	Clase Maniquí	
+	
+		+ id
+		+ Vestido
+		+ Pantalon
+		+ Camisa
+			metodo desvestir () en el cual se le quita toda la ropa que tenga
+			metodo vestir () si tiene ropa se la quita y luego se decide como le viste, con camisa y pantalon o con vestido.
+		
+		
+		
+	Clase Escaparate (con metodo main)
+	  vamos a crear dos maniquies 
+		al primero lo creamos desnudo y lo vestimos como queramos
+		al segundo lo creamos con vestido y luego le ponemos camisa y pantalon
+	cuando tengamos los dos maniquies vestidos 
+			metodo mostrarEscaparate () pasandole los dos maniquies como parametros y tenemos que mostrar por cada maniqui la ropa que llevan
+			metodo mostrarPrecioRopa () donde nos sume el precio del conjunto que lleve.
+		
