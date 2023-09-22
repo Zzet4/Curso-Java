@@ -11,7 +11,7 @@ public class Camisa {
 	private Boton boton;
 	
 	//Constructores
-	public Camisa(int id, String color, String talla, double precio) {
+	public Camisa(int id, String color, String talla, double precio, Boton boton) {
 		super();
 		this.id = id;
 		this.color = color;
