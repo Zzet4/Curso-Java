@@ -25,7 +25,7 @@ Clase Carrera
 	+ Caballo[]
 	+ distancia
 	
-	iniciarCarrera()
+	metodo iniciarCarrera()
 		todos los caballos asignados a la carrera se pongan a correr
 		
 		//Devolver caballo ganador
