@@ -48,21 +48,35 @@ public class Carrera {
 	
 //Métodos.
 	
-	public void inicarCarrera(Caballos [] caballo){
+	public int iniciarCarrera(){
 		boolean ganador = false;
+		int dorsalGanador = 0;
+		int cuentaVueltas = 0;
+	
 		do {
+			cuentaVueltas += 1;
+			System.out.println("\n--- COMIENZA LA VUELTA NÚMERO " + cuentaVueltas + " ---\n");
 			for (Caballos participante : caballo) {
+			
 				participante.correr();
 				if(participante.getAvance()>this.distancia){
+					dorsalGanador = participante.getDorsal();
 					ganador = true;
 					break;
 				}
 			}
-		}while(ganador==false);
-								
+		}while(!ganador);	
+		
+		//Reseteamos el avance de los caballos
+		for (Caballos participante : caballo) {
+			participante.resetea();
+		}
+		
+		System.out.println("\nTENEMOS UN GANADOR!!!\nEl caballo ganador es el que lleva el dorsal número: " + dorsalGanador);
+		return dorsalGanador;
 	}
 			
-		//System.out.println("El caballo ganador es");
+		
 			
 		
 }

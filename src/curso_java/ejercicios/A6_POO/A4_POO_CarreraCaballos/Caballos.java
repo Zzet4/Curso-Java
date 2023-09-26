@@ -81,7 +81,12 @@ public class Caballos {
 	}
 
 //Creación de Metodos
+	
+	//Metodo para resetear los metr
 
+	public void resetea () {
+		this.avance=0;
+	}
 	// Metodo correr
 	public int correr () { 
 		
@@ -98,7 +103,7 @@ public class Caballos {
 		//Hacemos este if por que la aleatoriedad puede hacer que el avanceCaballo sea negativo, en ese caso lo igualamos a cero, en caso de que
 				//avanceCaballo sea positivo, asignamos dicho valor al atributo de ese caballo en concreto
 				if(avanceCaballo>0) {
-					this.avance = avanceCaballo;
+					this.avance += avanceCaballo;
 				}else {
 					avanceCaballo = 0;
 				}
