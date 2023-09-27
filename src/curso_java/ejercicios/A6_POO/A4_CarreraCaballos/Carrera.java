@@ -1,4 +1,4 @@
-package curso_java.ejercicios.A6_POO.A4_POO_CarreraCaballos;
+package curso_java.ejercicios.A6_POO.A4_CarreraCaballos;
 
 public class Carrera {
 	
