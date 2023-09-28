@@ -64,9 +64,9 @@ public class GranPremio {
 			int resultadoCarrera = carrera.iniciarCarrera();
 			for(Apostante datoApostante : apostante) {	
 				if(resultadoCarrera == datoApostante.getDorsalApostado()) {
-					//datoApostante.setSaldo() = datoApostante.getApuesta() * 5;
+					datoApostante.actualizaSaldo((datoApostante.getApuesta()*5));
 				}else {
-					//datoApostante.setSaldo() -= datoApostante.getApuesta();
+					datoApostante.actualizaSaldo((0-datoApostante.getApuesta()));
 					
 				}
 			}

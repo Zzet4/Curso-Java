@@ -66,11 +66,10 @@ public class CasaDeApuestas {
 	
 	
 	
-	//inicioApuesta(arrayCaballos, arrayCarreras, arrayApostantes, granPrixSuiza);
+		granPrixSuiza.iniciarGranPremio(arrayApostantes);
 
 	}
 	
-	//Metodo de inicioApuesta.
 
 
 }

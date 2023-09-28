@@ -46,7 +46,7 @@ public class A0_Atajos_Eclipse {
 //		Ctrl+Shift+L	mostrar todos los atajos de teclado
 //		Al pulsar left ALT + left Shift el sistema operativo alterna entre sets de caracteres, por ejemplo cambiando los – por /. Es interesante saberlo si intentando una combinación como Alt+Shift+A no pulsamos la A y empezamos a escribir caracteres raros sin saber porqué.	
 //		Ctrl+Shift+T   mostrar el buscador de clases
-		
+//		Ctrl+Shift+R  Abrir el buscador de recursos, (Busca cualquier archivo).
 		
 		
 		

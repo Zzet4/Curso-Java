@@ -24,11 +24,7 @@ Supermercado
 	
 	abrirSupermercado() --> se crean todos los objetos
 	3 clientes --> añadirProductos al carrito
-	2 cajeras --> cobrar a los clientes
+	2 cajeras --> cobrar a los clientes (Si el cliente es VIP hacer un 15% de descuento)
 	cada cliente tiene que pagar el importe de la compra
 	
 	
-	
-	
-
-

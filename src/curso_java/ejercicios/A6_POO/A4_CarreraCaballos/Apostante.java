@@ -32,13 +32,13 @@ public class Apostante {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public double getSaldo() {
+	public int getSaldo() {
 		return saldo;
 	}
-	public void setSaldo(int saldo) {
-		this.saldo = saldo;
-	}
-	public double getApuesta() {
+//	public void setSaldo(int saldo) {        //Este set no tiene sentido ya que hemos creado un método para modificar el saldo
+//		this.saldo = saldo;					 //que se llama actualizaSaldo
+//	}
+	public int getApuesta() {
 		return apuesta;
 	}
 	public void setApuesta(int apuesta) {
@@ -65,6 +65,10 @@ public class Apostante {
 		int dorsal = Utils.scanInt("¿A que dorsal deseas apostar?");
 		this.dorsalApostado = dorsal;
 		return dorsal;
+	}
+	
+	public void actualizaSaldo (int importe) {  //Creamos un método que
+		this.saldo += importe;
 	}
 	
 	
