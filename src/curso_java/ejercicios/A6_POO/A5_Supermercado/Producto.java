@@ -2,11 +2,11 @@ package curso_java.ejercicios.A6_POO.A5_Supermercado;
 
 
 //CLASE Y ATRIBUTOS.
-public class Producto {
-	private int id;
-	private String nombre;
-	private double precio;
-	private String tipo;
+	public class Producto {
+		private int id;
+		private String nombre;
+		private double precio;
+		private String tipo;
 	
 	
 	
