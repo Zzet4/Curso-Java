@@ -39,24 +39,34 @@ public Cafeteria(String nombre) {
 	public void abrirCafeteria() {
 		
 	//CREACIÓN DE OBJETOS.
-		//Creamos los objeto CoffeCup
-		CoffeCup capuchino = new CoffeCup();
+
 		//Creamos los objeto ClienteCafetería
 		ClienteCafeteria paco = new ClienteCafeteria("Paco");
 		
-		System.out.println("La temperatura del cafe son: " + capuchino.getTemperatura() + " grados.");
 		
-		//TODO do {
+		
+		boolean cafeOk;
+		do {
+			//Creamos los objeto CoffeCup
+			CoffeCup capuchino = new CoffeCup();
+			System.out.println("La temperatura del cafe son: " + capuchino.getTemperatura() + " grados.");
+			cafeOk = true;
+			
 			try {
 				paco.tomarTazaCafe(capuchino);
-			}catch(Exception e) {
-				System.out.println(e.getStackTrace());
+			}catch(TooColdTemperatureException e) {
+				System.out.println("El cliente necesita otro café, el suyo estaba muy frío");
+				cafeOk = false;
+			
+			}catch(TooHotTemperatureException e) {
+				System.out.println("El cliente necesita otro café, el suyo estaba muy caliente");
+				cafeOk = false;
+				
 			}finally {
 				System.out.println("Esto se imprime si o si");
 			}
-			System.out.println("Fin");
 		
-		//}while(paco.tomarTazaCafe(capuchino)==false);
+		}while(!cafeOk);
 		
 		
 		

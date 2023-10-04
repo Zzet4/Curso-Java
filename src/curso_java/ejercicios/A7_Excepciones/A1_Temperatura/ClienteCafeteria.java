@@ -20,20 +20,17 @@ public class ClienteCafeteria {
 	}
 	
 //MÉTODOS CLIENTE CAFETERÍA
+	//Declaramos el metodo tomar cafe y en su declaración ""propagamos"" las excepciones para que no salte donde
+		//se invoque este al método.
 	public void tomarTazaCafe (CoffeCup taza) throws TooHotTemperatureException, TooColdTemperatureException {
-		boolean cafeOK = true;
+
 	
-		if(taza.getTemperatura()<20) {
-			cafeOK = false;
-			System.out.println("Esta muy frío");
-			throw new TooHotTemperatureException();
-			
+		if(taza.getTemperatura()<20) {			
+			throw new TooColdTemperatureException();	
 		}else if (taza.getTemperatura()>80) {
-			cafeOK = false;
-			System.out.println("Esta muy caliente");
-			throw new TooColdTemperatureException();
+			throw new TooHotTemperatureException();
 		}
-	//return cafeOk;
+	
 	}
 	
 	
