@@ -1,0 +1,15 @@
+Cramos una lista de alumnos
+Crear 4 alumnos.
+	Los metemos en la lista solo si esta está vacía.
+	
+--> mostrar info de los alumnos que estén en la lista
+
+Solicitamos un DNI y si el alumno cuyo DNI hemos introducido está en la lista
+lo borraremos, si no esta se indicará
+
+--> mostrar info de los alumnos que estén en la lista
+
+Solicitamos un DNI y si el alumno cuyo DNI hemos introducido está en la lista
+le vamos a modificar el nombre por Vladimir. 
+
+--> mostrar info de los alumnos que estén en la lista

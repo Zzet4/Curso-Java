@@ -1,0 +1,84 @@
+- Creamos base de datos curso
+
+- Creamos nueva conexion a esa base de datos en SQL Developer
+
+BASE DE DATOS
+===================================================================
+Se desea tener una base de datos con la información de 
+instalaciones/edificios 
+
+TB_FACILITIES
+-Información acerca de las plantas, nombre, categoria, descripción, 
+	GUID (Global Unique identifier), altura.
++ Todas las columnas con comentarios
+
+	id          number, PK, AUTO_INCREMENT
+    guid        number(7) UNIQUE,
+    name        varchar(45) not null,
+    description varchar(200),
+    category    varchar(45),
+    address     varchar(200),
+    heigth		decimal (5,2)
+    
+    
+    INSERTS 5-6 
+    
+    SELECT
+    
+    SELECT para mostrar todos los facilities que tengan más de 100 m 
+    
+    
+
+//=======================================================================================
+RESPUESTA
+//======================================================================================
+
+
+abrimos MySQL Comand Line Client e introducimos el password
+
+Ejecutamos el comando --> CREATE DATABASE PRUEBA //con esto creamos la BBDD
+Ejecutamos el comando --> USE PRUEBA //con esto nos conectamos a la BBDD
+Ejecutamos el comando --> SHOW TABLES //con esto mostramos las tablas de la BBDD
+
+//Vamos a crear las tablas y los inserts desde SQL Developer.
+
+abrimos squl developer y pulsamos en el boton (+) para añadir una nueva conexión a la base de datos
+que acabamos de crear, tipo de base mysql, user, password, seleccionar BBDD "PRUEBA", conectar.
+
+//Con esto ya habriamos establecido una conexión entre mysql developer y la base de datos que hemos
+creado con nombre PRUEBA.
+
+A continuación ejecutamos los comandos sql para crear la tabla, los inserts y la select.
+
+
+CREATE TABLE TB_FACILITIES(
+    id integer PRIMARY KEY AUTO_INCREMENT COMMENT 'Este campo es la PK' ,
+    guid numeric(7) UNIQUE COMMENT 'Este campo no se que es' ,
+    name varchar(45) not null COMMENT 'Este campo es el nombre del edificio' ,
+    description varchar(200) COMMENT 'Este campo es la descripción del edificio' ,
+    category varchar(45) COMMENT 'Este campo es la categoría del edificio' ,
+    address varchar(200) COMMENT 'Este campo es la dirección del edificio' ,
+    heigth decimal (5,2) COMMENT 'Este campo es la altura en metros del edificio'
+);
+
+INSERT INTO TB_FACILITIES (guid, name, description, category, address, heigth)
+VALUES (1001, "Edificio1", "Este es el edificio 1", "categoría 1", "calle 1", 80);
+
+INSERT INTO TB_FACILITIES (guid, name, description, category, address, heigth)
+VALUES (1002, "Edificio2", "Este es el edificio 2", "categoría 2", "calle 2", 90,2);
+
+INSERT INTO TB_FACILITIES (guid, name, description, category, address, heigth)
+VALUES (1000, "Edificio3", "Este es el edificio 3", "categoría 3", "calle 3", 100,3);
+
+INSERT INTO TB_FACILITIES (guid, name, description, category, address, heigth)
+VALUES (1000, "Edificio4", "Este es el edificio 4", "categoría 4", "calle 4", 110,4);
+
+INSERT INTO TB_FACILITIES (guid, name, description, category, address, heigth)
+VALUES (1000, "Edificio5", "Este es el edificio 5", "categoría 5", "calle 5", 70,5);
+
+INSERT INTO TB_FACILITIES (guid, name, description, category, address, heigth)
+VALUES (1000, "Edificio6", "Este es el edificio 6", "categoría 6", "calle 6", 130,6);
+
+select * 
+from tb_facilities
+where altura >100;
