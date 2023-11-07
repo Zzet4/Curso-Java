@@ -1,0 +1,43 @@
+Vamos a llevar la gestion de los libros de diferentes bibliotecas. 
+De las bibliotecas vamos a poder obtener todos los libros que tienen asociados 
+así como la dirección en la que se encuentran dichas bibliotecas. 
+(Las direcciones se podran aplicar a futuro a otros objetos/entidades)
+
+Primer menu:
+
+Mostrar todas las bibliotecas disponibles
+
+1. Biblioteca1
+2. Biblioteca2
+3. Biblioteca3
+4. Salir
+Seleccione Biblioteca
+
+
+1. Mostrar Info biblioteca -> Nos muestre dirección y nombre de la biblioteca
+2. Mostrar Libros de la biblioteca - con los datos del libro, (DIFICIL)->los datos de la biblioteca y la dirección de la biblioteca
+3. Buscar Libro (Facil: Buscar solo por titulo) (Dificil: Preguntar por el campo)
+4. Insertar Libro 
+5. Modificar. Preguntar por titulo si se encuentra, mostrar cada campo de la tabla para preguntar por el valor
+6. Borrar.  Preguntar por titulo si se encuentra se borra
+7. Volver
+
+
+===================================================================================================================
+
+INTRODUCIMOS LOS PATRONES DE DISEÑO.
+
+===PATRÓN DE DISEÑO DTO (DATA TRANSFER OBJECT)===
+CREAREMOS UN PAQUETE UNICAMENTE PARA METER LOS POJOS (PLAIN OLD JAVA OBJECT) Y LO LLAMAREMOS ENTITIES YA QUE
+CONVERTIREMOS TODAS LAS TABLAS DE NUESTRA BASE DE DATOS EN CLASES Y TODAS LAS COLUMNAS EN ATRIBUTOS.
+
+===PATRÓN DE DISEÑO DAO (DATA ACCESS OBJECT)===
+CREAREMOS OTRO PAQUETE UNICAMENTE PARA LAS UTILIDADES QUE VAN A INTERACTUAR CON LA BASE DE DATOS.
+CADA CLASE QUE VAYA A INTERACTUAR CON LA BASE DE DATOS TENDRA UNA CLASE EN ESTE PAQUETE CON SUS MÉTODOS QUE
+IMPLEMENTARAN LA FUNCIONALIDAD DE CONSULTA Y MANIPULACIÓN DE DATOS EN LA BBDD.
+LAS CLASES RECIBEN EL NOMBRE DE LA CLASE POJO SEGUIDO DE DAO, POR EJEMPLO DEL POJO BIBLIOTECA LA CLASE BIBLIOTECADAO.
+ESTAS CLASES TENDRAN UN ATRIBUTO "CONEXIÓN" QUE SE INICIALIZARÁ EN SU CONSTRUCTOR. MÁS ADELANTE, CUANDO NECESITEMOS
+INTERACTUAR CON LA BASE DE DATOS DESDE LA CLASE MAIN, CREAREMOS UN OBJETO DE ESTAS CLASES PARA INVOCAR SUS MÉTODOS.
+
+
+

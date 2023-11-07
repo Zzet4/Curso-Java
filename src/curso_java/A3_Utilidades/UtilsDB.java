@@ -19,7 +19,7 @@ public class UtilsDB {
 	//Creamos un método para abrir conexión con nuestras credenciales propias que a su vez va a llamar al metodo que lo sobrecarga donde además se 
 	//comprueba que no exista una conexión previa.
 	public static Connection getInstance() throws SQLException{
-		String url = "jdbc:mysql://localhost:3306/curso?serverTimezone=Europe/Madrid";
+		String url = "jdbc:mysql://localhost:3306/bibliotecas?serverTimezone=Europe/Madrid";
 		String username = "root";
 		String password = "password";
 		

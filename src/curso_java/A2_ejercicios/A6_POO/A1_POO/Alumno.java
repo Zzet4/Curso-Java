@@ -102,7 +102,7 @@ public class Alumno {
 		}
 	}
 	
-	@Override //Para mostrar por pantalla los atributos del objeto
+	@Override //El método toString sirve para mostrar por pantalla los atributos del objeto
 	public String toString() {
 		return "Alumno [nombre=" + nombre + ", apellidos=" + apellidos + ", dni=" + dni + ", nota=" + nota + "]";
 	}

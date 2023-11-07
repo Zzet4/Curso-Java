@@ -1,4 +1,4 @@
-package curso_java.A2_ejercicios.A8_Colecciones;
+package curso_java.A2_ejercicios.A8_Colecciones.E1_Colecciones;
 
 import java.util.ArrayList;
 import java.util.List;
