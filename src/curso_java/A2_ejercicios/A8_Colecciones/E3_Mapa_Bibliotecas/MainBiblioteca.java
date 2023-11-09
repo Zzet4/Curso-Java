@@ -29,19 +29,73 @@ public class MainBiblioteca {
 		MainBiblioteca mainBiblioteca = new MainBiblioteca();
 //		mainBiblioteca.inicio();
 		
-		mainBiblioteca.muestraLibros(1);
-		
 	//=================pirnt del menú principal==============================
-		System.out.println(
-				"\n========= MENÚ PRINCIPAL =========\n\n" +
+		
+		int opcionMP = 0;
+		do {
+			opcionMP = Utils.scanInt("\n\n\n========= MENÚ BIBLIOTECAS =========\n\n" +
 				" 1. Biblioteca de Getafe.\n" +
 				" 2. Biblioteca de Torrejón de Ardoz.\n" +
 				" 3. Biblioteca de Alcala de Henares.\n" +
 				" 4. Salir.\n" +
-				"\nSeleccione una biblioteca.\n"	
-			);
+				"\nSeleccione una biblioteca.\n"	);
+			
+			if (opcionMP!=4) {
+				int opcion1 = Utils.scanInt(
+						"\n========= MENÚ PRINCIPAL =========\n\n" +
+						" 1. Mostrar información.\n" +
+						" 2. Mostrar catálogo.\n" +
+						" 3. Buscar libro.\n" +
+						" 4. Insertar libro.\n" +
+						" 5. Modificar libro.\n" +
+						" 6. Borrar libro.\n" +
+						" 7. Volver\n" +
+						"\nSeleccione una opción"
+					);
+				
+				
+				switch (opcion1) {
+				case 1: // Mostrar información de la biblioteca
+					mainBiblioteca.mostrarBiblioteca(opcionMP);
+					
+					break;
+				case 2: // Mostrar catálogo.
+					mainBiblioteca.muestraLibros(opcionMP);
+					break;
+				case 3: // Buscar libro.
+					
+					break;
+				case 4: // Insertar libro.
+					
+					
+					mainBiblioteca.insertarLibro();					
+					
+					break;
+				case 5: // Modificar libro.
+					break;
+				case 6: // Borrar libro.
+					break;
+				case 7: //Volver\n
+					break;
+				
+				}			
+			}else if (opcionMP==4) {
+				System.out.println("Hasta pronto");
+			}else {System.out.println("Seleccione una de las opciones del menú\n\n");};
+			
+
+		}while(opcionMP!=4);
 		
-	}
+		
+		
+	}		
+			
+
+		
+		
+		
+		
+	
 
 	
 	public void inicio() {
@@ -83,7 +137,8 @@ public class MainBiblioteca {
 	
 	
 	
-	
+//==================================================================================================================
+//==================================================================================================================
 	
 	public void muestraLibros(int biblioteca){
 		
@@ -97,17 +152,39 @@ public class MainBiblioteca {
 			e.printStackTrace();
 		}
 
+	}
+	
+	
+	public void mostrarBiblioteca(int opcionMP) {
+		try {
+			BibliotecaDAO bibliotecaDAO = new BibliotecaDAO();			
+			Biblioteca1 biblioteca = bibliotecaDAO.getBiblioteca(opcionMP);
+			System.out.println(biblioteca);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
+	
+	public void insertarLibro() {
+		try {
+			LibroDAO libroDAO = new LibroDAO();
+			libroDAO.insertarLibro();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		
 	}
 	
 	
 	
-	
-	
-	
-		
-}
+}		
+
 	
 
 ////=================pirnt del menú principal==============================

@@ -13,7 +13,6 @@ Mostrar todas las bibliotecas disponibles
 4. Salir
 Seleccione Biblioteca
 
-
 1. Mostrar Info biblioteca -> Nos muestre dirección y nombre de la biblioteca
 2. Mostrar Libros de la biblioteca - con los datos del libro, (DIFICIL)->los datos de la biblioteca y la dirección de la biblioteca
 3. Buscar Libro (Facil: Buscar solo por titulo) (Dificil: Preguntar por el campo)

@@ -17,7 +17,6 @@ public class Biblioteca1 {
 	}
 	
 	
-	
 	//GETTERS & SETTERS
 	public int getIdBiblioteca() {
 		return idBiblioteca;

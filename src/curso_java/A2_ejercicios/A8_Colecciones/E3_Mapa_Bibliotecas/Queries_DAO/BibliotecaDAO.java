@@ -1,5 +1,6 @@
 package curso_java.A2_ejercicios.A8_Colecciones.E3_Mapa_Bibliotecas.Queries_DAO;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -65,20 +66,41 @@ public class BibliotecaDAO extends ConexionDAO{
 	}
 	
 	//PARA SACAR TODAS LAS BIBLIOTECAS CON LA LOCALIDAD COMO PARÁMETRO.
-	public List<Biblioteca1> getBibliotecas (String localidad) {
+	public List<Biblioteca1> getBibliotecas (int opcion) {
 		List<Biblioteca1> bibliotecas = new ArrayList<Biblioteca1>();
 		this.getConexion();
-		
 		
 		return bibliotecas;
 	}
 	
 	//PARA SACAR UNA BIBLIOTECA
-	public Biblioteca getBiblioteca (int idBiblioteca) {
+	public Biblioteca1 getBiblioteca (int opcionMP) throws SQLException {
 		this.getConexion();
+		PreparedStatement prepareStatement = this.getConexion().prepareStatement(
+				"SELECT b.nombre, d.nombre, d.numero, d.cod_postal, d.localidad, d.provincia, d.pais\r\n"
+				+ "FROM tb_biblioteca as b JOIN tb_direccion as d ON d.id_direccion=b.fk_direccion\r\n"
+				+ "WHERE id_biblioteca=?;"
+				);
+		prepareStatement.setInt(1, opcionMP);
+			
+		ResultSet rs = prepareStatement.executeQuery();
+		Biblioteca1 biblioteca = null;
+		while(rs.next()) {
+
+			 String nombre = rs.getString("b.nombre");
+			 String nombreCalle = rs.getString("d.nombre");
+			 int numero = rs.getInt("d.numero");
+			 int codPostal = rs.getInt("d.cod_postal");
+			 String localidad = rs.getString("d.localidad");
+			 String provincia = rs.getString("d.provincia");
+			 String pais = rs.getString("d.pais");	
+			
+			 Direccion1 direccion = new Direccion1(0, nombreCalle, numero, codPostal, localidad, provincia, pais);
+			 biblioteca = new Biblioteca1(0, nombre, direccion); 
+		}
 		
 		
-		return null;
+		return biblioteca;
 	}
 	
 	

@@ -3,11 +3,11 @@ package curso_java.A2_ejercicios.A8_Colecciones.E3_Mapa_Bibliotecas.Queries_DAO;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
 import curso_java.A2_ejercicios.A8_Colecciones.E3_Mapa_Bibliotecas.Entities_DTO.Libro1;
+import curso_java.A3_Utilidades.Utils;
 
 public class LibroDAO extends ConexionDAO{
 
@@ -63,15 +63,41 @@ public class LibroDAO extends ConexionDAO{
 	
 	//MÉTODO PARA INSERTAR UN LIBRO.
 	public void insertarLibro() throws SQLException {
+		
+		String nombreLibro = Utils.scanString("Introduzca el nombre del libro");
+		String autorLibro = Utils.scanString("Introduzca el nombre del autor del libro");
+		int isbnLibro = Utils.scanInt("Introduzca el isbn del libro");
+		String descripcionLibro = Utils.scanString("Introduzca una descripción para el libro");
+		int numBiblioteca = Utils.scanInt("Introduzca el número de la biblioteca donde se inserta el libro");
+		
 		//RESCATAMOS LA CONEXIÓN HEREDADA DE LA CLASE PADRE CONEXIONDAO.
 		this.getConexion();
 		
-		//CREAMOS UN OBJETO STATEMENT Y LO INICIALIZAMOS CON LA CONEXION
-		//LLAMANDO AL MÉTODO CREATESTATEMENT.
-		Statement stmt = this.getConexion().createStatement();
+		PreparedStatement prepareStatement = this.getConexion().prepareStatement(
+				"INSERT INTO TB_LIBRO (NOMBRE, AUTOR, ISBN, DESCRIPCION, FK_BIBLIOTECA)\r\n"
+				+ "VALUES (?, ?, ?, ?, ?);\r\n"
+				);
+		prepareStatement.setString(1, nombreLibro);
+		prepareStatement.setString(2, autorLibro);
+		prepareStatement.setInt(3, isbnLibro);
+		prepareStatement.setString(4, descripcionLibro);
+		prepareStatement.setInt(5, numBiblioteca);
 		
-		//CREAMOS LA QUERY QUE NECESITAREMOS EN LA FUNCIONALIDAD.
-		String query = "";
+		ResultSet rs = prepareStatement.executeQuery();
+		
+		while(rs.next()) {
+			 int idLibro = 0;
+			 String tituloLibro = rs.getString("NOMBRE");
+			 String autor = rs.getString("AUTOR");
+			 int isbn = rs.getInt("ISBN");
+			 String descripcion = rs.getString("DESCRIPCION");	
+			 int Biblioteca = rs.getInt("FK_BIBLIOTECA");
+			 Libro1 libro = new Libro1(idLibro, tituloLibro, autor, isbn, descripcion, numBiblioteca);
+			 
+			 System.out.println("El libro que se va a insertar es el siguiente\n" + libro);
+			 
+		}
+
 		
 		
 	}
