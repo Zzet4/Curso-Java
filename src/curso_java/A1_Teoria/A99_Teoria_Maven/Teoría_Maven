@@ -1,0 +1,33 @@
+
+
+Maven es, en esencia, un GESTOR DE DEPENDENCIAS o LIBRERÍAS, aunque incluye otras funciones:
+
+	- Ayuda con la integración continua generando de forma facil los .JAR (que son todos los .class juntos en un único archivo.jar)
+	- Albergar plantillas o arquetipos de proyectos (que son la estructura de las carpetas del proyecto y sus ficheros de configuración).
+	- Ayuda a que todos los miembros de un equipo utilicen las mimsas librerías, versiones y base de datos.	
+	
+Maven utiliza un fichero de configuración llamado POM.XML que es su fichero maestro para poder fucnionar.
+En este fichero agregaremos las dependencias las librerías que vayamos necesitando, (siempre dentro de las etiquetas <dependencies></dependencies>)
+Si una librería que nosotros metemos necesitara de otras para funcionar, será maven quien automáticamente se desargue las necesarias, ejemplo:
+
+
+<dependencies>
+
+	<dependency>
+		<groupId>org.apache.logging.log4j</groupId>
+		<artifactId>log4j-core</artifactId>
+		<version>2.21.1</version>
+	</dependency>
+
+</dependencies>
+
+
+En este ejemplo podemos ver como hemos introducido en el archivo de configuración POM.XML dentro de las etiquetas dependencies una nueva dependencia 
+entre las etiquetas <dependency>. En este ejemplo es la librería log4j-core pero Maven para poder utilizar esta librería se ha descargado tambien 
+la librería log4j-api.
+
+Todas las librerías que introducimos en el archivo de configuracion POM.XML de maven se guardan automáticamente en el siguiente directorio
+
+C\user\.m2 ...etc
+
+Y eclipse nos lo muestra en el explorador de paquetes dentro de una carpeta que denomina Maven Dependencies.
