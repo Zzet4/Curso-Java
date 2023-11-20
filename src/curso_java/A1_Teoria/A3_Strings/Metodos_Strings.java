@@ -106,7 +106,7 @@ public class Metodos_Strings {
 				String notaStr = "10";
 				int notNum = Integer.parseInt(notaStr);
 				
-			//para pasar un char a un int
+			//para pasar un String a un int
 				
 				
 				

@@ -185,6 +185,12 @@ public class MainBiblioteca {
 	}
 	
 	
+	public void borrarLibro() {
+		
+		
+	}
+	
+	
 	
 }		
 

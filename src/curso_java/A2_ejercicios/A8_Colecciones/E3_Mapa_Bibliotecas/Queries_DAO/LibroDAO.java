@@ -96,10 +96,7 @@ public class LibroDAO extends ConexionDAO{
 			 
 			 System.out.println("El libro que se va a insertar es el siguiente\n" + libro);
 			 
-		}
-
-		
-		
+		}	
 	}
 	
 	

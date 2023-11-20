@@ -14,7 +14,8 @@ public class Alumno {
 	String nombre;
 	String apellidos;
 	private String dni;
-	int nota;
+	Integer nota;
+	boolean vip;
 //____________________________________________________________________________________________________________________________________________
 	//Declaramos el atributo dni como private para que no pueda ser modificado
 	//para poder acceder al método pero no modificarlo hay que crear un metodo aparte que sea set y otro para poder obtenerlo que sea get
@@ -44,6 +45,18 @@ public class Alumno {
 	public Alumno() {
 	}
 
+	// para inicializar con todos los atributos
+	public Alumno(String nombre, String apellidos, String dni, Integer nota, boolean vip) {
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.dni = dni;
+		this.nota = nota;
+		this.vip = vip;
+	}
+	
+	
+	
+	
 	// para inicializar con nombre, apellidos y dni
 	public Alumno(String nombre, String apellidos, String dni) {
 		this.nombre = nombre;
@@ -104,7 +117,7 @@ public class Alumno {
 	
 	@Override //El método toString sirve para mostrar por pantalla los atributos del objeto
 	public String toString() {
-		return "Alumno [nombre=" + nombre + ", apellidos=" + apellidos + ", dni=" + dni + ", nota=" + nota + "]";
+		return "Alumno [nombre=" + nombre + "\n, apellidos=" + apellidos + "\n, dni=" + dni + "\n, nota=" + nota + "\n, vip=" + vip + "]\n";
 	}
 
 	

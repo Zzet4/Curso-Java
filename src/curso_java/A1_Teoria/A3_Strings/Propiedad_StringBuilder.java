@@ -43,6 +43,24 @@ public class Propiedad_StringBuilder {
 	saludo2.toString();
 	System.out.println(saludo2);
 	
+	
+	
+	/*
+	 * 
+	 * Otro método del StringBuilder es para quitar caracteres al final del string.
+	 * 
+	 * saludo2.setLength(saludo2.length()-2);
+	 * Con saludo2.length()-2 le decimos que queremos etablecer la longitud en su longitud actual y luego restarle 2
+	 * si pusieramos a secas saludo2(10) estaríamos queriendo establecer la longitud total en 10 caracteres.
+	 * 
+	 * En nuestro ejemplo quitará la interrogación y la d.	 * 
+	 * */
+	
+	
+	saludo2.setLength(saludo2.length()-2);
+	
+	
+	
  }
 
 }

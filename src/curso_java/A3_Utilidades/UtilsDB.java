@@ -40,7 +40,7 @@ public class UtilsDB {
 		return connection;
 	}
 
-	//Creamos un método para cerrar la conexión.
+	//Creamos un método para cerrar la conexión. aunque si declaramos un try catch with resources no haría falta cerrarlo.
 	public static void getOffInstance() throws SQLException{
 		
 		if(connection!=null) {
