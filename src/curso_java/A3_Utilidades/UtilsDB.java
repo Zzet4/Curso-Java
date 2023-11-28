@@ -22,11 +22,21 @@ public class UtilsDB {
 		String url = "jdbc:mysql://localhost:3306/bibliotecas?serverTimezone=Europe/Madrid";
 		String username = "root";
 		String password = "password";
-		
 		connection = getInstance(url, username, password);
-
 		return connection;
 	}
+	
+	
+	
+	public static Connection getInstanceOracle() throws SQLException{
+		String urlConDatos = "jdbc:oracle:thin:cuso/password@localhost:1521:XE";
+		String url2 = "jdbc:oracle:thin@localhost:1521:XE";
+		String username = "curso";
+		String password = "password";
+		connection = getInstance(url2, username, password);
+		return connection;
+	}
+	
 	
 	
 	// Sobrecargamos el metodo que usamos para conectarnos con nuestras credenciales con otro método que declaramos con 3 parámetros, url, user y pass

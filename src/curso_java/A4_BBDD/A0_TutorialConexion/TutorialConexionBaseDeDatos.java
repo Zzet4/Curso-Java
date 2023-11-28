@@ -8,7 +8,7 @@ import java.sql.Statement;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-public class ConexionBaseDeDatos {//Creamos la clase ConexionBaseDeDatos.
+public class TutorialConexionBaseDeDatos {//Creamos la clase ConexionBaseDeDatos.
 
 	public static void main(String[] args) { //Creamos un método main para hacer las llamadas pertinentes al metodo de conexión
 //		ConexionBaseDeDatos conexion = new ConexionBaseDeDatos();

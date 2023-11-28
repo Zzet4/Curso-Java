@@ -30,9 +30,20 @@
 			<AppenderRef ref="LogToConsole" />
 			 <AppenderRef ref="rollingFile"/>
 		</Logger>
-		<Root level="trace">
+		
+ 		
+ 		<Logger name="curso_java.A2_ejercicios.A93_Hibernate.A1_Hibernate1" 
+ 			level="debug" 
+ 			additivity="false"> 
+			<AppenderRef ref="LogToConsole" /> 
+		</Logger> 
+		
+		
+		
+		
+		<Root level="error">
 			<AppenderRef ref="LogToConsole" />
-			 <AppenderRef ref="rollingFile"/>
+			<AppenderRef ref="rollingFile"/>
 		</Root>
 	</Loggers>
 </Configuration>
