@@ -1,5 +1,23 @@
 package curso_java.A4_BBDD;
 
+
+
+Para establecer una conexión necesitamos el DriveManager
+que requiere de unos drivers especificos.
+
+
+NECESITAMOS UN OBJETO ENTITY MANAGER CUYO MÉTODO DE CREACIÓN TEMOS
+GUARDADO EN UTILSHIBERNATE.
+
+
+
+
+
+
+
+
+
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;

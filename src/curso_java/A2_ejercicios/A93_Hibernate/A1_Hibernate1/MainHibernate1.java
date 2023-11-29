@@ -18,7 +18,7 @@ public class MainHibernate1 {
 	
 	public static void main(String[] args) {
 		logger.debug("Empezando creación de tablas");
-		EntityManager em = UtilsHibernate.getentityManager();
+		EntityManager em = UtilsHibernate.getEM("EjemploOracle");
 		Usuario usuario1 = new Usuario(1, "Usuario1", "Apellido1", "11111111A", UtilsFecha.generaFecha());
 		Usuario usuario2 = new Usuario(2, "Usuario2", "Apellido2", "22222222A", UtilsFecha.generaFecha());
 		Usuario usuario3 = new Usuario(3, "Usuario3", "Apellido3", "33333333A");

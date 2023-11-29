@@ -1,0 +1,7 @@
+Primera parte
+================
+Consultar la tabla TB_USUARIO y guardar registros en fichero
+El fichero tendrá cabecera con los nombres de las columnas
+ID;NOMBRE;APELLIDOS;FECHAALTA...
+1;N1;A1;yyymmdd;...
+

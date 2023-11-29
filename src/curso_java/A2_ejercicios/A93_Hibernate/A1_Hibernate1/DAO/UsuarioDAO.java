@@ -15,7 +15,7 @@ public class UsuarioDAO {
 	private EntityManager em;
 	
 	public UsuarioDAO() {
-		em = UtilsHibernate.getentityManager();
+		em = UtilsHibernate.getEM("EjemploOracle");
 	}
 	
 	

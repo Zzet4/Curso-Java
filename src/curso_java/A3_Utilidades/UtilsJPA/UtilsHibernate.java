@@ -16,26 +16,31 @@ public class UtilsHibernate {
 	//DEBEMOS CREAR EL ATRIBUTO PRIVATE STATIC FINAL QUE NECESITAREMOS PARA LOS MÉTODOS DE LA UTILIDAD.
 	//AL SER ESTATICO SE CREA AL ARRANCAR LA APLICACIÓN Y LOS MÉTODOS QUE HAGAMOS ESTÁTICOS PODRÁN DISPONER
 	//DEL ATRIBUTO TAMBIÉN AUTOMÁTICAMENTE AL ARRANCAR LA APLICACIÓN.
-	private static final EntityManagerFactory entityManagerFactory = buildEntityManagerFactory();
-	private String persistenceUnit;
+	
+//	private static final EntityManagerFactory entityManagerFactory = buildEntityManagerFactory();
+//	private String persistenceUnit;
 	
 	// CREAMOS EL MÉTODO QUE NOS GENERA EL ENTITY MANAGER FACTORY PARA PODER CREAR LUEGO EL ENTITY MANAGER Y TRABAJAR CON HIBERNATE.
 	// LE PASAMOS DENTRO COMO LA PERSISTENCE UNIT QUE TENEMOS POR DEFECTO EN EL EJERCICIO 1. "HIBERNATE 1"
-	private static EntityManagerFactory buildEntityManagerFactory() {
-		return buildEntityManagerFactory("EjemploOracle");
-	}
+	
+//	private static EntityManagerFactory buildEntityManagerFactory() {
+//		return buildEntityManagerFactory("EjemploOracle");
+//	}
 
 	
 	// OBRECARGAMOS EL MÉTODO QUE NOS CONSTRUYE EL ENTITY MANAGER FÁCTORY PASÁNDOLE AL MÉTODO EL PARAMETRO 
 	// DE LA PERSISTENCE UNIT A LA QUE QUEREMOS QUE ACUDA HIBERNATE PARA VER SU CONFIGURACIÓN.
-	private static EntityManagerFactory buildEntityManagerFactory(String persistenceUnit) {
-		return Persistence.createEntityManagerFactory(persistenceUnit);
+	public static EntityManager getEM(String persistenceUnit) {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory(persistenceUnit);
+		EntityManager em = emf.createEntityManager();		
+		return em;
 	}
 	
 	
 	//MÉTODO PARA CREAR EL ENTITY MANAGER QUE UTILIZAREMOS PARA TRABAJAR CON HIBERNATE.
-	public static EntityManager getentityManager() {
-		return entityManagerFactory.createEntityManager();
-	}
+	
+//	public static EntityManager getentityManager() {
+//		return entityManagerFactory.createEntityManager();
+//	}
 	
 }

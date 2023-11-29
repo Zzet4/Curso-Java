@@ -38,6 +38,11 @@
 			<AppenderRef ref="LogToConsole" /> 
 		</Logger> 
 		
+		<Logger name="curso_java.A2_ejercicios.A93_Hibernate.Hibernate2" 
+ 			level="debug" 
+ 			additivity="false"> 
+			<AppenderRef ref="LogToConsole" /> 
+		</Logger> 
 		
 		
 		
