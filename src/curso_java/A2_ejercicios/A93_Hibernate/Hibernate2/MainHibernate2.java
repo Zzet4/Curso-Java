@@ -4,6 +4,8 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
@@ -31,12 +33,24 @@ public class MainHibernate2 {
 																			// AHORA PODEMOS MANIPULAR LOS DATOS DE LA LISTA
 																			// POR EJEMPLO PARA AÑADIRLOS A UN FICHERO.
 		
+		String ruta = ".\\src\\curso_java\\A2_ejercicios\\A93_Hibernate\\Hibernate2\\CarpetaFichero\\fichero1.txt"; // RUTA DONDE QUEREMOS CREAR EL 
+																													// ARCHIVO
+		
+		servicio.crearFichero(ruta, usuarios); // CON ESTE MÉTODO CREAMOS EL FICHERO Y ESCRIBIMOS EN EL UNA LINEA POR CADA USUARIO DE 
+											   // LA LISTA QUE 
 	}
 	
 	
 	
 	
+	//--- PRIMERA PARTE DEL EJERCICIO ---//
+//	=========================================================
+//	Consultar la tabla TB_USUARIO y guardar registros en fichero
+//	El fichero tendrá cabecera con los nombres de las columnas
+//	ID;NOMBRE;APELLIDOS;DNI;FECHAALTA...
+//	1;N1;A1;yyymmdd;...
 	
+
 	//DECLARAMOS MÉTODOS PARA:
 		//-- CREAR LA CONEXIÓN Y LA TABLA DEL ENTITY
 		//-- INSERTAR LOS USUARIOS EN LA TABLA
@@ -44,10 +58,7 @@ public class MainHibernate2 {
 		//-- CREAR UN FICHERO CON CABECERA
 		//-- PASAR LOS DATOS DE ESOS ALUMNOS AL FICHERO
 	
-	
-	
-	
-	
+
 
 	//MÉTODO PARA INSERTAR REGISTROS EN UNA TABLA CON HIBERNATE
 	public void insertaUsuarios (String persistenceUnit) {
@@ -134,24 +145,114 @@ public class MainHibernate2 {
 	
 	
 	//MÉTODO PARA LA CREACIÓN DE UN FICHERO CON CABECERA
-	public void crearFichero(String nombreFichero) {
+	public void crearFichero(String nombreFichero, List<Usuario> listaUsuarios) {
 	 //Este método para crear un archivo se utiliza cuando hay mucha información que se va a añadir.
+		//CREAMOS UN OBJETO DE TIPO FILE PASÁNDOLE COMO PARÁMETRO UN STRING CON LA RUTA COMPLETA INCLUYENDO EL NOMBRE DEL 
+		//ARCHIVO QUE QUEREMOS CREAR.
 	        File archivo = new File(nombreFichero);
-	        try (BufferedWriter buffer = new BufferedWriter(new FileWriter(archivo, false))){ //Con el parametro a false sobreescribirá el archivo
-	        	//con el parametro a true simplemente escribirá lo que le indiquemos a continuación de lo que ya hay.
-
-	            buffer.append("Hola que tal amigos!\n")
-	                    .append("Todo bien? yo escribiendo en un archivo...\n")
-	                    .append("Hasta luego Lucas!\n");
-	            // buffer.close();
+	        //CREAMOS UN TRY WITHRESOURCES AL QUE LE PASAMOS LA CREACIÓN DEL OBJETO BUFFER PARA QUE SE CIERRE AUTOMÁTICAMENTE AL ACABAR
+	        //EL OBJETO BUFFER SERÁ EL ENCARGADO DE ESCRIBIR EN EL FICHERO QUE CREEMOS, POR LO TANTO DEBEMOS PASARLE DOS PARÁMETROS
+	        	//1er PARÁMETRO --> EL OBJETO TIPO FILE QUE CREAMOS ANTERIORMENTE
+	        	//2o PARÁMETRO --> --FALSE-- SI QUEREMOS QUE EL BUFFER SOBREESCRIBA O --TRUE-- SI QUEREMOS QUE EL BUFER MANTENGA
+	        					// EL CONTENIDO DEL ARCHIVO Y ESCRIBA A CONTINUACIÓN.
+	        try (BufferedWriter buffer = new BufferedWriter(new FileWriter(archivo, false))){ 
+	       
+	        	//CON EL MÉTODO BUFFER.APPEND ESCRIBIMOS EN EL FICHERO QUE LE INDICAMOS EN LA CREACIÓN DEL BUFER.
+	        	// LE PASAMOS AL MÉTODO EL STRING LITERAL QUE QUERAMOS QUE ESCRIBA, EN ESTE CASO LA CABECERA.
+	            buffer.append("ID,NOMBRE,APELLIDOS;DNI;FECHAALTA\n");
+	            System.out.println("Se ha creado la cabecera.\n Comienza la escritura del contenido!");
+	            
+	            //CREAMOS UN BUCLE FOR QUE RECORRA LA LISTA QUE CONSEGUIMOS DE LA SELECT * DE USUARIOS
+	            //POR CADA VUELTA DEL BUCLE SACAREMOS LOS DATOS DE CADA USUARIO, LOS GUARDAREMOS EN VARIABLES Y DESPUÉS
+	            // HAREMOS UN .APPEND DE ESTOS DATOS EN EL FICHERO.
+	            for ( Usuario usuario : listaUsuarios ) {
+	            	long idUsuario = usuario.getIdUsuario();
+	            	String nombre = usuario.getNombre();
+	            	String apellido = usuario.getApellidos();
+	            	String dni = usuario.getDni();
+	            	
+	            	//OJO, AL RECOGER LA FECHA SE NOS MOSTRARÁ EN UN FORMATO QUE NO ES EL QUE QUEREMOS.
+	            	// EN LAS PRÓXIMAS LINEAS VAMOS A VER COMO PODEMOS MODIFICAR EL FORMATO.
+	            	Date fechaAlta = usuario.getFechaAlta();
+	            	
+	            	
+	            	//DECLARAMOS UN STRING CON EL PATRON EXACTO QUE QUEREMOS PARA LA FECHA
+	            	String patronFecha = "yyyyMMdd" ; 
+	            	//CREAMOS UN OBJETO DE LA CLASE SIMPLEDATEFORMAT AL QUE LE PASAMOS COMO PARÁMETRO EL PATRON DE LA LINEA ANTERIOR
+	            	SimpleDateFormat nuevoFormatoFecha = new SimpleDateFormat(patronFecha);
+	            	// CREAMOS UN STRING QUE VA A GUARDAR LA NUEVA FECHA.
+	            	// INICIALIZAMOS EL STRING UTILIZANDO EL OBJETO DE LA CLASE SIMPLEDATEFORMAT QUE CREAMOS EN LA LINEA ANTERIOR
+	            	// APLICÁNDOLE EL MÉTODO.FORMAT AL QUE LE PASAMOS COMO PARÁMETRO NUESTRA FECHA ORIGINAL DE TIPO DATE.
+	            	String FechaAlta = nuevoFormatoFecha.format(fechaAlta);
+	     
+	            	
+	            	buffer.append(idUsuario + ";");
+	            	buffer.append(nombre + ";");
+	            	buffer.append(apellido + ";");
+	            	buffer.append(dni + ";");
+	            	buffer.append(FechaAlta + ";");
+	            	buffer.newLine(); // EL MÉTODO .NEWLINE METE UN SALTO DE LINEA.
+	            }
+	            	//buffer.close(); // CERRARÍAMOS EL BUFFER SI NO LO HUBIERAMOS DECLARADO DENTRO DEL TRY WITHRESOURCES.
+	            					  // TODOS LOS MÉTODOS QUE INCLUÍMOS EN EL TRY WITH RESOURCES IMPLEMENTAN LA INTERFAZ
+	            					  // AUTOCLOSEABLE POR LO QUE SE CERRARÁN AUTOMÁTICAMENTE.
 	            System.out.println("El archivo se ha creado con éxito!");
 	        } catch (IOException e) {
 	            e.printStackTrace();
 	        }
-	    
-		
+	        // EL PROCESO TIENE QUE ESTAR DENTRO DE UN TRY CATCH POR LAS POSIBLES IOEXCEPTION QUE PUEDAN APARECER DURANTE EL PROCESO
+	        // DE ESCRITURA COMO NO TENER PERMISOS DE ACCESO AL FICHERO O NO ENCONTRADO.		
 		
 	}
 	
+	
+	
+	
+	
+	//--- SEGUNDA PARTE DEL EJERCICIO ---//
+//	=========================================================
+//			Crear entity Productos
+//			1. Cargar Productos -> Pedir directorio y nombre del fichero con los datos a cargar
+//			2. Mostrar Productos
+//			3. Mostrar por Fecha -> Pedir fecha y mostrar los productos dados de alta en ese dia
+//			4. Mostrar para cada tipo de producto la media de precio y el total de productos
+	
+	
+	// NECESITAMOS LEER EL FICHERO_PRODUCTOS PARA RESCATAR LOS DATOS Y METERLOS EN UNA LISTA
+	// CREAREMOS UN ENTITY "PRODUCTO" Y LO VINCULAREMOS AL FICHERO DE CONFIGURACIÓN PERSISTENCE.XML
+	// CADA ATRIBUTO DEL ENTITY CORRESPONDERA CON UNA COLUMNA DEL FICHERO_PRODUCTOS"
+	// DE ESTA MANERA, COMO YA TENEMOS LOS DATOS DEL FICHERO EN UNA LISTA, PODEMOS HACER EL INSERT DE
+	// LOS DATOS EN LA TABLA PRODUCTOS CREADA POR EL ENTITY A TRAVES DE HIBERNATE.
+	
+	// DESPUÉS MOSTRAREMOS TODOS LOS PRODUCTOS, (SELECT *)
+	// A CONTINUACIÓN LOS MOSTRAREMOS DE NUEVO ORDENADOS POR FECHA
+	// POR ÚLTIMO HAREMOS UNA SELECT PARA MOSTRAR CADA TIPO DE PRODUCTO, LA MEDIA DE PRECIO Y EL TOTAL UNIDADES.
+	
+	
+	
+	public void leerFichero() {
+		
+		/*
+		 Crearemos el archivo de tipo Path para poder después al método readAllLines.
+		 * 
+		 * Path archivoPath = Paths.get(".\\src\\curso_java\\A2_ejercicios\\A92_Ficheros\\Ficheros2\\alumnos.txt");
+		 * 
+		 * después Creamos la lista de alumnos donde posteriormente los meteremos y en vez de crear un array de Strings, 
+		 * crearemos una lista para recorrer cada linea de la siguiente manera
+		 * 
+		 * List<Alumno> alumnos = new ArrayList();
+		 * List <String> lines = Files.readAllLines(path);
+		 * 
+		 * Por último en vez de generar el objeto de tipo Scanner y el iterator, 
+		 * podemos recorrer la lista con un foreach para ir recuperando la info necesaria
+		 * 
+		 * for (String linea : lineas){
+		 *		aquí ya podríamos trocear la linea con el método .split --> line.split("\\|");
+		 *		después recogeríamos los datos troceados para ir creando los objetos y metiéndolos en la lista alumnos.
+		 */
+		
+		
+	}
+		
 	
 }
