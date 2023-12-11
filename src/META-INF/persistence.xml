@@ -44,6 +44,10 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <!-- entidades o entities -->
         <class>curso_java.A2_ejercicios.A93_Hibernate.A1_Hibernate1.Entities.Usuario</class>
+        <class>curso_java.A2_ejercicios.A93_Hibernate.Hibernate2.Entity.Producto</class>
+        <class>curso_java.A2_ejercicios.A93_Hibernate.relations.unounounidireccional.entities.Persona</class>
+        <class>curso_java.A2_ejercicios.A93_Hibernate.relations.unounounidireccional.entities.Direccion</class>
+        
         
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
