@@ -1,4 +1,4 @@
-package curso_java.hibernate.util;
+package curso_java.A3_Utilidades;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;

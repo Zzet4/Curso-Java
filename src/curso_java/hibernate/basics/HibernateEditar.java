@@ -1,9 +1,11 @@
 package curso_java.hibernate.basics;
 
+
+
 import javax.swing.JOptionPane;
 
+import curso_java.A3_Utilidades.JpaUtil;
 import curso_java.hibernate.basics.entities.Cliente;
-import curso_java.hibernate.util.JpaUtil;
 import jakarta.persistence.EntityManager;
 
 public class HibernateEditar {

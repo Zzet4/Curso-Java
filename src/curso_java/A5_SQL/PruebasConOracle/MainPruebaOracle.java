@@ -3,7 +3,7 @@ package curso_java.A5_SQL.PruebasConOracle;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import curso_java.A3_Utilidades.UtilsDB;
+import proyectoExamen.es.curso.utilsProyectoExamen.UtilsDB;
 
 public class MainPruebaOracle {
 	public static void main(String[] args) {

@@ -1,7 +1,7 @@
 package curso_java.A4_BBDD.Oracle;
 
-import curso_java.A3_Utilidades.UtilsJPA.UtilsHibernate;
 import jakarta.persistence.EntityManager;
+import proyectoExamen.es.curso.utilsProyectoExamen.UtilsJPA.UtilsHibernate;
 
 public class HibernateOracle {
 	public static void main (String [] args) {

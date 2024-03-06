@@ -10,8 +10,8 @@ import curso_java.A2_ejercicios.A93_Hibernate.A1_Hibernate1.DAO.UsuarioDAO;
 import curso_java.A2_ejercicios.A93_Hibernate.A1_Hibernate1.Entities.Usuario;
 import curso_java.A3_Utilidades.Utils;
 import curso_java.A3_Utilidades.UtilsFechas.UtilsFecha;
-import curso_java.A3_Utilidades.UtilsJPA.UtilsHibernate;
 import jakarta.persistence.EntityManager;
+import utils.UtilsHibernate;
 
 public class MainHibernate1 {
 	private static final Logger logger = LogManager.getLogger(MainHibernate1.class);

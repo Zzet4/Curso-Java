@@ -5,6 +5,7 @@
 	<groupId>es.curso.Getafe</groupId>
 	<artifactId>PrimerProyecto</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<resources>
@@ -27,6 +28,9 @@
 	</build>
 
 	<dependencies>
+		
+		
+		
 		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>
 			<groupId>mysql</groupId>

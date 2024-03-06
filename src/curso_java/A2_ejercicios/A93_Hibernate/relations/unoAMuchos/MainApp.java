@@ -3,9 +3,9 @@ package curso_java.A2_ejercicios.A93_Hibernate.relations.unoAMuchos;
 
 import curso_java.A2_ejercicios.A93_Hibernate.relations.unoAMuchos.entities.Libro;
 import curso_java.A2_ejercicios.A93_Hibernate.relations.unounounidireccional.entities.Persona;
-import curso_java.A3_Utilidades.UtilsJPA.UtilsHibernate;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
+import utils.UtilsHibernate;
 
 public class MainApp {
 

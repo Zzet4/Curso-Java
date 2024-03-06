@@ -3,7 +3,7 @@ package curso_java.A2_ejercicios.A8_Colecciones.E3_Mapa_Bibliotecas.Queries_DAO;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import curso_java.A3_Utilidades.UtilsDB;
+import utils.UtilsDB;
 
 public abstract class ConexionDAO {
 	private Connection conexion;

@@ -22,10 +22,10 @@ import curso_java.A2_ejercicios.A93_Hibernate.Hibernate2.Entity.Producto;
 import curso_java.A2_ejercicios.A93_Hibernate.Hibernate2.POJO.ProductosInfo;
 import curso_java.A3_Utilidades.Utils;
 import curso_java.A3_Utilidades.UtilsFechas.UtilsFecha;
-import curso_java.A3_Utilidades.UtilsJPA.UtilsHibernate;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
+import utils.UtilsHibernate;
 
 public class MainHibernate2 {
 	private static final Logger logger = LogManager.getLogger(MainHibernate2.class);

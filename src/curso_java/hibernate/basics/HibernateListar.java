@@ -1,12 +1,14 @@
 package curso_java.hibernate.basics;
 
+
+
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import curso_java.A3_Utilidades.JpaUtil;
 import curso_java.hibernate.basics.entities.Cliente;
-import curso_java.hibernate.util.JpaUtil;
 import jakarta.persistence.EntityManager;
 
 public class HibernateListar {

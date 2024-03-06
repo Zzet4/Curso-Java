@@ -3,8 +3,8 @@ package curso_java.hibernate.basics;
 import java.util.List;
 import java.util.Scanner;
 
+import curso_java.A3_Utilidades.JpaUtil;
 import curso_java.hibernate.basics.entities.Cliente;
-import curso_java.hibernate.util.JpaUtil;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
 

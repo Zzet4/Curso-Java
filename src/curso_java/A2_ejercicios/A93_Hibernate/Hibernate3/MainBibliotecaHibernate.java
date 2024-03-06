@@ -5,10 +5,10 @@ import java.util.List;
 import curso_java.A2_ejercicios.A8_Colecciones.E2_Mapa_Bilbioteca.Biblioteca;
 import curso_java.A2_ejercicios.A93_Hibernate.Hibernate3.Entities.BibliotecaEntityHibernate;
 import curso_java.A2_ejercicios.A93_Hibernate.relations.unounounidireccional.entities.Direccion;
-import curso_java.A3_Utilidades.UtilsJPA.UtilsHibernate;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.TypedQuery;
+import utils.UtilsHibernate;
 
 public class MainBibliotecaHibernate {
 

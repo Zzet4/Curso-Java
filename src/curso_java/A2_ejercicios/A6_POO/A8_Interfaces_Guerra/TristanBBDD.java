@@ -9,7 +9,7 @@ import java.util.List;
 
 import curso_java.A2_ejercicios.A6_POO.A8_Interfaces_2.A00_Excepciones.MaxEstadisticasException;
 import curso_java.A2_ejercicios.A6_POO.A8_Interfaces_2.A00_Excepciones.MaxUnirseException;
-import curso_java.A3_Utilidades.UtilsDB;
+import utils.UtilsDB;
 
 public class TristanBBDD {
 	public static void main(String [] args) {

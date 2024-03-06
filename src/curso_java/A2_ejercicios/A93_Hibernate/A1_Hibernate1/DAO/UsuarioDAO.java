@@ -4,11 +4,11 @@ import java.util.Date;
 import java.util.List;
 
 import curso_java.A2_ejercicios.A93_Hibernate.A1_Hibernate1.Entities.Usuario;
-import curso_java.A3_Utilidades.UtilsJPA.UtilsHibernate;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.NoResultException;
 import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
+import utils.UtilsHibernate;
 
 public class UsuarioDAO {
 	

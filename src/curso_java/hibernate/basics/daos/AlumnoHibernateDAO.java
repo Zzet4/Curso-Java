@@ -5,9 +5,9 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import curso_java.A3_Utilidades.JpaUtil;
 import curso_java.hibernate.basics.entities.Alumno;
 import curso_java.hibernate.basics.enums.AlumnoEnum;
-import curso_java.hibernate.util.JpaUtil;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.NoResultException;
 import jakarta.persistence.Query;
